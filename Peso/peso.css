@@ -1,0 +1,10 @@
+body { background-color: antiquewhite;}
+#Title {
+ color: rgb(209, 162, 101);
+ text-align: center;
+}
+#Resultado{
+    border: 1px solid black;
+    width: 260px;
+    height: 30px;
+}

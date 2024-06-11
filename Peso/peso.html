@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="peso.css">
+</head>
+<body>
+    <form>
+       
+        <fieldset>
+            <h1 id="Title">Calculadora de Indice de Massa Corporal </h1>
+            <br>
+            Peso:
+            <input type="number" id="Massa" step="0.01" placeholder="Quilos">
+            Altura:
+            <input type="number" id="Altura" step="0.01" placeholder="Metros">
+            <button onclick="Calcular()" id= "avoid">Medir</button>
+            <input type="reset" name="" id="" value="limpar"> <br>
+            Resultado:
+            <div id="Resultado" ></div>
+        </fieldset>
+        
+    </form>
+   
+    <script src="peso.js"></script>
+</body>
+</html>
