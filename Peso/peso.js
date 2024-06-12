@@ -15,19 +15,19 @@ function Calcular (){
         else if(IMC <= 16.9) {
         document.getElementById("Resultado").innerHTML = "Muito abaixo do peso";
     }
-            else if(IMC <= 18.4 || IMC >= 17) {
+            else if(IMC <= 18.4 && IMC >= 17) {
         document.getElementById("Resultado").innerHTML = "Abaixo do peso";
     }
-            else if(IMC <=24.9 || IMC >=18.5) {
+            else if(IMC <=24.9 && IMC >=18.5) {
         document.getElementById("Resultado").innerHTML = "Peso normal";
     }
-                else if(IMC <= 29.9 || IMC >= 25 ) {
+                else if(IMC <= 29.9 && IMC >= 25 ) {
         document.getElementById("Resultado").innerHTML = "Muito abaixo do peso";
     }
-                    else if(IMC <= 34.9 || IMC >= 30) {
+                    else if(IMC <= 34.9 && IMC >= 30) {
         document.getElementById("Resultado").innerHTML = "Obesidade grau I";
     }
-                        else if(IMC <= 40 || IMC >= 35) {
+                        else if(IMC <= 40 && IMC >= 35) {
         document.getElementById("Resultado").innerHTML = "Obesidade grau II";
     }
                              else if(IMC > 40.0) {
