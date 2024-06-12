@@ -1,0 +1,20 @@
+#Cabe{
+    border: solid rgb(3, 5, 104) 2px;
+    background-color: antiquewhite;
+    text-align: center;
+    font-family:monospace;
+}
+body{
+    background-color: azure;
+}
+.Quest{
+    border: double rgb(3, 5, 104) 1px;
+    background-color: rgba(247, 245, 245, 0.9);
+    margin-bottom: 7px;
+    margin-top: 3px;
+}
+#Fim{
+    float:inline-end;
+    border: solid gray 1px;
+    padding: 5px;
+}
