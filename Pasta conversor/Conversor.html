@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de moedas</title>
+    <link rel="stylesheet" href="Conversor.css">
+</head>
+<body><div>
+    <form>
+        <fieldset>
+            <legend>Câmbio</legend>
+            <p style="text-align: center; font-size: 120%;">Cotação da moeda em reais</p>
+            <label for="Escolha">📥Valor da primeira moeda:</label>
+    <input type="number" name="Escolha" id="De" onchange="Calcular()">
+
+    <br> <br>
+
+            <label for="Escolha1">📥Valor da segunda moeda:</label>
+    <input type="number" name="Escolha1" id="Para" onchange="Calcular()"><br> <br> <button onclick="Padronizar()" id="PA">Padronizar</button>
+        </fieldset>
+    <form>
+<fieldset>
+<legend>Conversor de moedas🌍</legend>
+<label for="Moedas">De:</label>
+<select name="Moedas1" id="D">
+    <option value="Branco" disabled selected>Escolha uma moeda </option>
+    <option  value="BR" id="br">🇧🇷 Real brasileiro </option>
+    <option  value="US" >🇺🇸 Dólar americano</option>
+    <option  value="EU" >🇪🇺 Euro</option>
+    <option value="AR">🇦🇷 Peso argentino</option>
+    <option value="RU">🇷🇺 Rubio russo</option>
+    <option value="AO">🇦🇴 Kwanza angolano</option>
+   </select><br> 
+    <br>
+     <button id="T"><img src="https://st4.depositphotos.com/5613078/25049/v/450/depositphotos_250499538-stock-illustration-exchange-icon-illustration-flip-turn.jpg" width="35" height="23" alt="inverter"  onclick="Inverte()"></button><br>
+<br>
+<label for="Moedas2">Para:</label>
+<select name="Moedas2" id="P">
+    <option value="Branco" disabled selected>Escolha uma moeda</option>
+    <option  value="BR">🇧🇷 Real brasileiro</option>
+    <option value="US">🇺🇸 Dólar americano</option>
+    <option  value="EU">🇪🇺 Euro</option>
+    <option value="AR">🇦🇷 Peso argentino</option>
+    <option value="RU">🇷🇺 Rubio russo</option>
+    <option value="AO">🇦🇴 Kwanza angolano</option>
+    </select>  <br><br>
+
+    <label for="Número">Quantia:</label>
+    <input type="number" value="Número" id="Number"  placeholder="Escreva a quantia de dinheiro">
+    <button onclick="calcular()" id="Y"> Calcular</button> <input type="reset" value="Limpa">
+        <br><br>
+
+    resultado📤:<div id="resultado"></div>
+</fieldset>
+</form>
+</div>
+<script>
+    document.getElementById("Y").addEventListener("click", function(event){
+  event.preventDefault()
+});
+document.getElementById("T").addEventListener("click", function(event){
+  event.preventDefault()
+});
+document.getElementById("PA").addEventListener("click", function(event){
+  event.preventDefault()
+});
+
+function calcular()
+{
+    let Moeda1=(document.getElementById('D').value);
+    let Moeda2=(document.getElementById('P').value);
+    let Quantidade = parseFloat( document.getElementById("Number").value);
+    let Variavel1= parseFloat(document.getElementById("De").value);
+    let Variavel2= parseFloat(document.getElementById("Para").value);
+    
+    let Resultado = Quantidade * Variavel1 / Variavel2;
+    document.getElementById("resultado").innerHTML=Resultado;
+    if( Moeda1 == Moeda2)
+    {
+        document.getElementById("resultado").innerText = "A moeda mantém o mesmo valor quando convertida por ela mesma.";
+    }
+    if( Moeda1 =="Branco" || Moeda2=="Branco"){
+        document.getElementById("resultado").innerText = " É necessario inserir, nos dois, os tipos das moedas para fazer a conversão.  "
+    }
+}
+
+function Inverte()
+{
+    let Variavel1= parseFloat(document.getElementById("De").value);
+    let Variavel2= parseFloat(document.getElementById("Para").value);
+    document.getElementById("De").value = Variavel2;
+    document.getElementById("Para").value = Variavel1;
+    let Moeda1=(document.getElementById('D').value);
+    let Moeda2=(document.getElementById('P').value);
+    document.getElementById('D').value = Moeda2
+    document.getElementById('P').value = Moeda1
+    Calcular()
+}
+
+function Calcular(){
+    let Moeda1=(document.getElementById('D').value);
+    let Moeda2=(document.getElementById('P').value);
+    let Quantidade = parseFloat( document.getElementById("Number").value);
+    let Variavel1= parseFloat(document.getElementById("De").value);
+    let Variavel2= parseFloat(document.getElementById("Para").value);
+    
+    let Resultado = Quantidade * Variavel1 / Variavel2;
+    document.getElementById("resultado").innerHTML=Resultado;
+}
+
+function Padronizar(){
+    let Moeda1=(document.getElementById('D').value);
+    let Moeda2=(document.getElementById('P').value);
+
+    if(Moeda1 == "BR"){
+        document.getElementById("De").value = 1.0;    
+    }
+    if(Moeda2 == "BR"){
+        document.getElementById("Para").value = 1.0; 
+    }
+    if(Moeda1 =="US"){
+        document.getElementById("De").value = 5.0; 
+    }
+    if(Moeda2 =="US"){
+        document.getElementById("Para").value = 5.0; 
+    }
+    if(Moeda1 =="EU"){
+        document.getElementById("De").value = 5.50; 
+    }
+    if(Moeda2 =="EU"){
+        document.getElementById("Para").value = 5.50; 
+    }
+    if(Moeda1 =="AR"){
+        document.getElementById("De").value = 0.005; 
+    }
+    if(Moeda2 =="AR"){
+        document.getElementById("Para").value = 0.005; 
+    }
+    if(Moeda1 =="RU"){
+        document.getElementById("De").value = 0.05; 
+    }
+    if(Moeda2 =="RU"){
+        document.getElementById("Para").value = 0.05; 
+    }
+    if(Moeda1 =="AO"){
+        document.getElementById("De").value = 0.006; 
+    }
+    if(Moeda2 =="AO"){
+        document.getElementById("Para").value = 0.006; 
+    }
+    Calcular()
+}
+
+</script>
+</body>
+</html>
